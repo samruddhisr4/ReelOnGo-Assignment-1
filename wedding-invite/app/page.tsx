@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-      <InviteSection />
-      <CoupleSection />
+      {/* <InviteSection /> */}
+      {/* <CoupleSection /> */}
       {/* <EventsSection />
       <CarSection />
       <CountdownSection /> */}
