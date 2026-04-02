@@ -5,47 +5,46 @@ export default function CoupleSection() {
     return (
         <section
             style={{
-                // background: "linear-gradient(180deg, #0a6b5f 0%, #0d7a6d 100%)",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                padding: "60px 20px",
+                padding: "80px 20px", // slightly more spacing
             }}
         >
-            {/* Outer container — sized to the scroll */}
+            {/* Parent container */}
             <div
                 style={{
                     position: "relative",
-                    width: "100%",
-                    /* height driven by scroll image aspect ratio (~1.3:1 tall) */
+                    width: "60%", // ⬅️ control overall size (reduce = scroll looks bigger in view)
+                    maxWidth: "700px",
                 }}
             >
-                {/* ── Layer 1: Scroll (base) ── */}
+                {/* ── Scroll Image (BASE) ── */}
                 <img
                     src="/scroll_invite.png"
-                    alt="Decorative scroll"
+                    alt="Scroll"
                     style={{
                         width: "100%",
                         height: "auto",
                         display: "block",
                         filter: "drop-shadow(0 12px 48px rgba(0,0,0,0.5))",
-                        userSelect: "none",
-                        pointerEvents: "none",
                     }}
                 />
 
-                {/* ── Layer 2: Oval photo frame centered on the scroll ── */}
+                {/* ── Overlay Image (EVENT BG) ── */}
                 <div
                     style={{
                         position: "absolute",
-                        /* Center the oval inside the scroll's writeable area */
                         top: "50%",
                         left: "50%",
                         transform: "translate(-50%, -50%)",
-                        width: "55%",       /* oval is 55% of scroll width */
-                        aspectRatio: "1",   /* square bounding box so oval is even */
-                        borderRadius: "50%",
+
+                        width: "25%", // ⬅️ smaller than before (was 55%)
+                        aspectRatio: "1",
+
+                        borderRadius: "33%",
                         overflow: "hidden",
+
                         boxShadow: "0 6px 30px rgba(0,0,0,0.4)",
                         border: "3px solid #b8860b",
                         zIndex: 2,
@@ -53,7 +52,7 @@ export default function CoupleSection() {
                 >
                     <Image
                         src="/eventbg.avif"
-                        alt="Couple"
+                        alt="Event"
                         fill
                         style={{ objectFit: "cover" }}
                     />
