@@ -45,5 +45,5 @@ def process_image(input_path, output_path):
     img.save(png_path, "PNG")
     print(f"Saved {png_path}")
 
-process_image("public/golden border.png", "public/golden border.avif")
+process_image("public/timeline.png", "public/timeline.avif")
 print("Done")
