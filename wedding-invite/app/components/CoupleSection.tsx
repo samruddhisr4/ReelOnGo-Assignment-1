@@ -32,12 +32,29 @@ export default function CoupleSection() {
             />
             {/* Text Overlay for BRIDE AND GROOM */}
             <div className='absolute top-0 left-0 w-full flex flex-col items-center justify-start z-20 pt-[20%]'>
-                <div className='text-30xl' style={{ color: "White", fontFamily: "Aptos", fontWeight: "200", fontSize: "4rem" }}>
+                <div className='text-30xl' style={{ color: "White", fontFamily: "sans-serif", fontWeight: "10", fontSize: "2rem" }}>
                     MEET THE
                 </div>
-                <div className='text-5xl font-bold mt-2' style={{ color: "White", fontFamily: "Aptos" }}>
+                <div className='text-5xl font-bold mt-2' style={{ color: "White", fontFamily: "sans-serif" }}>
                     BRIDE AND GROOM
                 </div>
+            </div>
+
+            {/* Bottom Thank You Paragraph */}
+            <div className="absolute bottom-[10%] left-0 w-full flex justify-center z-20 px-8">
+                <p
+                    className="text-center w-full max-w-4xl"
+                    style={{
+                        color: "white",
+                        fontFamily: "sans-serif",
+                        fontWeight: 300,
+                        fontSize: "clamp(0.9rem, 2vw, 1.2rem)",
+                        lineHeight: 1.6,
+                        opacity: 0.9
+                    }}
+                >
+                    We are both so delighted that you are able to join us in celebrating what we hope will be one of the happiest days of our lives. The affection shown to us by so many people since our Nichayathartham has been incredibly moving, and has touched us both deeply. We would like to take this opportunity to thank everyone most sincerely for their kindness. We are looking forward to see you at the wedding.
+                </p>
             </div>
 
             {/* Overlay Slideshow Image */}
