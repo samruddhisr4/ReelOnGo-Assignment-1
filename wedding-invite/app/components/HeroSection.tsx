@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { byPrefixAndName } from "@fortawesome/fontawesome-svg-core";
+
 
 // LANTERNS
 const lanterns = [
@@ -213,12 +213,12 @@ export default function HeroSection() {
                             </p>
 
                             {/* ── EVENTS GRID ── */}
-                            <div className="relative w-full overflow-hidden flex flex-col items-center py-16 px-10" style={{ marginBottom: "15%" }}>
+                            <div className="relative w-full overflow-hidden flex flex-col items-center py-32 px-10" style={{ marginBottom: "10%" }}>
                                 <img
                                     src="/eventouterbg.png"
                                     alt=""
                                     className="absolute inset-0 w-full h-full object-fill z-0 opacity-100"
-                                    style={{ borderRadius: "3%", width: "80%", left: "10%" }}
+                                    style={{ borderRadius: "3%", width: "90%", left: "5%", height: "100%" }}
                                 />
                                 <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8 justify-items-center max-w-[1000px] w-full mx-auto">
                                     {events.map((event, i) => (
@@ -246,7 +246,7 @@ export default function HeroSection() {
 
                             {/* ── TIMELINE ── */}
                             <div className="relative w-full max-w-[1400px] mt-40 mb-32 z-10 px-4 mx-auto">
-                                <h2 className="text-[#f3ecba] text-4xl font-bold tracking-[0.2em] mb-32 text-center" style={{ fontFamily: "Castellar", fontSize: "clamp(2rem, 5vw, 3.5rem)", marginTop: "10%" }}>OUR JOURNEY</h2>
+                                <h2 className="text-[#f3ecba] text-4xl font-bold tracking-[0.2em] mb-32 text-center" style={{ fontFamily: "Castellar", fontSize: "clamp(2rem, 5vw, 3.5rem)", marginTop: "6%" }}>OUR JOURNEY</h2>
                                 <div className="relative grid grid-cols-4 grid-rows-[160px_80px_160px] w-full items-center">
                                     <div className="absolute top-[200px] left-0 w-full h-[6px] bg-[#f9efa7] z-0 rounded-full">
                                         <div className="absolute left-[-18px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent border-r-[20px] border-r-[#f9efa7]" />
