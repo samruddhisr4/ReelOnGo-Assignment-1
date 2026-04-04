@@ -155,7 +155,7 @@ export default function HeroSection() {
                     </div>
 
                     {/* ── GANPATI ICON ── */}
-                    <img src="/ganpati.avif" alt="Ganpati" style={{ position: "absolute", top: "330vh", left: "50vw", transform: "translate(-50%, -50%)", width: "clamp(80px, 12vw, 155px)", height: "auto", zIndex: 20 }} />
+                    <img src="/ganpati.avif" alt="Ganpati" style={{ position: "absolute", top: "327vh", left: "50vw", transform: "translate(-50%, -50%)", width: "clamp(80px, 12vw, 155px)", height: "auto", zIndex: 20 }} />
 
                     {/* ── MAIN CONTENT (Positioned over temple image) ── */}
                     <div style={{ position: "absolute", top: "340vh", left: "50vw", transform: "translate(-50%, 0)", width: "95%", maxWidth: "1600px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex: 20 }}>
