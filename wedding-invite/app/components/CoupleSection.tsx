@@ -173,7 +173,7 @@ export default function CoupleSection() {
                                 left: "50vw",
                                 bottom: "0%",
                                 transform: "translate(-50%, -50%)",
-                                width: "55%",
+                                width: "48%",
                                 height: "auto",
                                 zIndex: 9999
                             }}
