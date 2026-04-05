@@ -1,17 +1,10 @@
-import HeroSection from "./components/HeroSection";
-// import InviteSection from "./components/InviteSection";
-import CoupleSection from "./components/CoupleSection";
-// import EventsSection from "./components/EventsSection";
-import CarSection from "./components/CarSection";
-import CountdownSection from "./components/CountdownSection";
+import Showcase from "./showcase/showcase";
+import HeroSection from "./southindian/components/HeroSection";
 
 export default function Home() {
   return (
     <div>
-      <HeroSection />
-      <CoupleSection />
-      <CarSection />
-      <CountdownSection />
+      <Showcase />
     </div>
   );
 }
