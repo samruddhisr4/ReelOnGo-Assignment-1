@@ -1,9 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-export default function CountdownSection() {
+export default function CountdownSection({ targetDate = "" }: { targetDate?: string }) {
     const calculateTimeLeft = () => {
-        const target = new Date("2027-03-10T00:00:00");
+        const defaultDate = "2027-03-10T00:00:00";
+        const target = new Date(targetDate ? `${targetDate}T00:00:00` : defaultDate);
         const now = new Date();
         const diff = target.getTime() - now.getTime();
 
@@ -77,9 +78,8 @@ export default function CountdownSection() {
 
                     {/* Timer Grid */}
                     <div
+                        className="grid grid-cols-2 md:grid-cols-4"
                         style={{
-                            display: "grid",
-                            gridTemplateColumns: "repeat(4, 1fr)",
                             gap: "clamp(0.5rem, 2.5vw, 2rem)",
                             backgroundColor: "rgba(0,0,0,0.6)",
                             padding: "clamp(1rem, 3vw, 2rem) clamp(1.5rem, 4vw, 3rem)",

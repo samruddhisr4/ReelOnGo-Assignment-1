@@ -11,7 +11,12 @@ const byPrefixAndName = {
     fass: { 'people-line': faPeopleLine } // Fallback to Solid (Free)
 };
 
-export default function CarSection() {
+export default function CarSection({ placard = "-NoSelection-" }: { placard?: string }) {
+    const showSection = placard !== "-NoSelection-";
+    const isEnhanced = placard === "Graphically Enhanced";
+
+    if (!showSection) return null;
+
     return (
         <div className="relative w-full">
             {/* 1. Background Layer (fills the section without dictating height) */}
@@ -19,15 +24,15 @@ export default function CarSection() {
                 <img
                     src="/yellowbg.avif"
                     alt="Yellow Background"
-                    className="w-screen h-full object-cover block"
-                    style={{ height: "350vh" }}
+                    className="w-full h-full object-cover block"
+                    style={{ minHeight: "100%" }}
                 />
             </div>
 
 
 
             {/* 3. Main Content Layer (Relative flow determines section height) */}
-            <div className="relative z-20 w-full flex flex-col items-center px-4 md:px-20 text-[#7b7037] pt-[19%] pb-200">
+            <div className="relative z-20 w-full flex flex-col items-center px-4 md:px-20 text-[#7b7037] pt-[19%] pb-20">
                 {/* ── THINGS TO KNOW SECTION ── */}
                 <div className="w-full flex flex-col items-center">
                     <h2

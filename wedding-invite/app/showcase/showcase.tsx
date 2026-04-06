@@ -15,61 +15,56 @@ export default function Showcase() {
         <div className="min-h-screen relative flex flex-col items-center justify-center text-center px-4 overflow-hidden" style={{ backgroundColor: "#f9f8f4", color: "#1a1a1a" }}>
 
             {/* Navbar (Minimal) */}
-            <nav className="absolute top-0 w-full flex justify-between items-center px-6 md:px-10 py-8 z-20" style={{ borderBottom: "1.7px solid black" }}>
+            <nav className="absolute top-0 w-full flex justify-between items-center px-6 md:px-10 py-6 z-20" style={{ borderBottom: "1.7px solid black", backgroundColor: "#000000" }}>
                 <div className="flex items-center gap-2">
-                    <img src="/showcase/logo.png" alt="Logo" className="h-6 md:h-9" />
+                    <img src="/showcase/logo.png" alt="Logo" className="h-7 md:h-7" />
                 </div>
                 <Link href="/createTemplate">
-                    <button className="px-8 md:px-10 py-4 md:py-5 bg-[#1a1a1a] text-white rounded-full text-base md:text-lg font-semibold hover:scale-105 transition-transform duration-300 shadow-xl flex items-center justify-between mx-auto gap-3 group" >
+                    <button className="px-6 md:px-6 py-3 md:py-3 bg-[#1a1a1a] text-black bg-white rounded-full text-base md:text-lg font-semibold hover:scale-105 transition-transform duration-300 shadow-xl flex items-center justify-between mx-auto gap-3 group" >
                         Create Template
-                        <div className="w-2 h-2 bg-white rounded-full group-hover:scale-150 transition-transform"></div>
+                        <div className="w-2 h-2 bg-black rounded-full group-hover:scale-150 transition-transform"></div>
                     </button>
                 </Link>
             </nav>
 
             {/* Hero Content */}
-            <div className="max-w-6xl mx-auto space-y-6 md:space-y-20 z-10 py-20 mt-27">
+            <div className="max-w-6xl mx-auto space-y-6 md:space-y-10 z-10 py-20 " style={{ marginTop: "8%" }} >
 
                 <p className="text-[1.2rem] md:text-[1.3rem] tracking-[-0.05em] uppercase font-semibold text-gray-500 mb-1 md:mb-4 opacity-80">
                     Introducing
                 </p>
 
-                <h1 className="text-4xl md:text-7xl lg:text-8xl font-[family-name:var(--font-playfair)] tracking-tight leading-[1.1] font-black italic">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-playfair)] tracking-tight leading-[0.9] font-black italic mb-10% ">
                     <span className="not-italic">Digital Templates for</span><br />
                     Beautiful <span className="not-italic">Invitations</span>
-                </h1>
-
-                <p className="text-base md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light px-4 mb-40">
-                    Easy-to-customise, effortless to share — stunning<br className="hidden md:block" />
-                    templates made for your most memorable moments.
-                </p>
-
-
+                </h2>
 
                 {/* Headline block */}
                 <div
                     style={{
                         textAlign: "center",
-                        marginBottom: "56px",
-                        maxWidth: "640px",
+                        marginBottom: "0.01em",
+                        maxWidth: "100%",
                         marginLeft: "auto",
                         marginRight: "auto",
+                        padding: "0 12px",
                     }}
                 >
                     <h2
                         style={{
                             fontFamily: "'Playfair Display', Georgia, serif",
-                            fontSize: "clamp(32px, 5vw, 54px)",
-                            fontWeight: 900,
+                            fontSize: "clamp(20px, 2.5vw, 32px)",
+                            fontWeight: 700,
                             color: "#1a1a18",
-                            lineHeight: 1.08,
-                            letterSpacing: "-0.03em",
-                            margin: "0 0 18px",
+                            lineHeight: 1.2,
+                            letterSpacing: "-0.02em",
+                            margin: "0 0 8px",
+                            whiteSpace: "nowrap",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
                         }}
                     >
-                        Your love story deserves
-                        <br />
-                        a{" "}
+                        Your love story deserves a{" "}
                         <em
                             style={{
                                 fontStyle: "italic",
@@ -80,31 +75,22 @@ export default function Showcase() {
                         </em>{" "}
                         first impression.
                     </h2>
+
                     <p
                         style={{
                             fontFamily: "'DM Sans', sans-serif",
-                            fontSize: "16px",
-                            fontWeight: 400,
+                            fontSize: "14px",
                             color: "#7a7a72",
-                            lineHeight: 1.65,
+                            lineHeight: 1.4,
                             margin: 0,
                         }}
                     >
-                        Handcrafted templates for Indian weddings —
-                        <br />
-                        personalise in minutes, share with everyone.
+                        Handcrafted templates for Indian weddings — personalise in minutes.
                     </p>
                 </div>
 
 
 
-
-                <div className="pt-4 md:pt-8">
-                    <button className="px-8 md:px-10 py-4 md:py-5 bg-[#1a1a1a] text-white rounded-full text-base md:text-lg font-semibold hover:scale-105 transition-transform duration-300 shadow-xl flex items-center justify-center mx-auto gap-3 group">
-                        Browse templates
-                        <div className="w-2 h-2 bg-white rounded-full group-hover:scale-150 transition-transform"></div>
-                    </button>
-                </div>
             </div>
             {/* Various clickable thumbnail of Templates */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20 md:gap-x-16 md:gap-y-24 lg:gap-x-24 px-10 md:px-16 lg:px-24 py-24 max-w-[95rem] mx-auto">

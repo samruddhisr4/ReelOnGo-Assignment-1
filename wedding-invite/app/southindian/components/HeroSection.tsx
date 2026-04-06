@@ -61,7 +61,14 @@ const floatKeyframes = `
 }
 `;
 
-export default function HeroSection() {
+export default function HeroSection({ fx = "-NoSelection-", weddingDate = "", weddingTime = "" }: { fx?: string, weddingDate?: string, weddingTime?: string }) {
+    const showLanterns = fx === "Lanterns";
+
+    // Format date for display (e.g., 2025-04-12 -> 12 · 04 · 2025)
+    const formattedDate = weddingDate 
+        ? weddingDate.split("-").reverse().join(" · ") 
+        : "12 · 04 · 2025";
+
     return (
         <div>
             <section className="relative w-full flex flex-col items-center z-20">
@@ -108,8 +115,8 @@ export default function HeroSection() {
                         }}
                     />
 
-                    {/* Pink Lanterns */}
-                    {lanterns.map((l) => (
+                    {/* Pink Lanterns (Conditional) */}
+                    {showLanterns && lanterns.map((l) => (
                         <img
                             key={l.id}
                             src="/pinklantern.avif"
@@ -135,30 +142,30 @@ export default function HeroSection() {
                     <div className="absolute top-0 left-0 w-full flex flex-col items-center pt-8 px-4 z-10">
                         <div className="absolute inset-0 h-full bg-gradient-to-b from-[#0d1a2e]/40 via-[#0d1a2e]/10 to-transparent pointer-events-none" />
                         <div className="relative z-10 text-center flex flex-col items-center">
-                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-widest text-white drop-shadow-2xl"
-                                style={{ paddingTop: "13%", fontFamily: "Castellar", textShadow: "0 2px 20px rgba(0,0,0,0.7)", paddingBottom: "0.5em" }}>
+                            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-[0.2em] text-white drop-shadow-2xl"
+                                style={{ paddingTop: "clamp(50px, 15vw, 150px)", fontFamily: "Castellar", textShadow: "0 2px 20px rgba(0,0,0,0.7)", paddingBottom: "0.5em" }}>
                                 MEENAYA
                             </h1>
-                            <p className="text-[#ffffff] text-1.8xl md:text-3xl mt-2 "
+                            <p className="text-[#ffffff] text-lg md:text-2xl mt-2 italic"
                                 style={{ fontFamily: "Baskerville Old Face", textShadow: "0 1px 10px rgba(0,0,0,0.8)", paddingBottom: "1em" }}>
                                 WEDS
                             </p>
-                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-widest text-white drop-shadow-2xl mt-1"
+                            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-[0.2em] text-white drop-shadow-2xl mt-1"
                                 style={{ fontFamily: "Castellar", textShadow: "0 2px 20px rgba(0,0,0,0.7)" }}>
                                 KAVYA
                             </h1>
-                            <p className="mt-4 text-white/75 text-base tracking-widest"
+                            <p className="mt-6 text-white/85 text-xs md:text-base tracking-[0.4em] uppercase font-bold"
                                 style={{ textShadow: "0 1px 8px rgba(0,0,0,0.9)" }}>
-                                12 · 04 · 2025
+                                {formattedDate} {weddingTime && `· ${weddingTime}`}
                             </p>
                         </div>
                     </div>
 
                     {/* ── GANPATI ICON ── */}
-                    <img src="/ganpati.avif" alt="Ganpati" style={{ position: "absolute", top: "327vh", left: "50vw", transform: "translate(-50%, -50%)", width: "clamp(80px, 12vw, 155px)", height: "auto", zIndex: 20 }} />
+                    <img src="/ganpati.avif" alt="Ganpati" style={{ position: "absolute", top: "328vh", left: "50vw", transform: "translate(-50%, -50%)", width: "clamp(100px, 15vw, 155px)", height: "auto", zIndex: 20 }} />
 
                     {/* ── MAIN CONTENT (Positioned over temple image) ── */}
-                    <div style={{ position: "absolute", top: "340vh", left: "50vw", transform: "translate(-50%, 0)", width: "95%", maxWidth: "1600px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex: 20 }}>
+                    <div style={{ position: "absolute", top: "338vh", left: "50vw", transform: "translate(-50%, 0)", width: "95%", maxWidth: "1600px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex: 20 }}>
                         <div className="flex flex-col items-center justify-center w-full">
 
                             <p style={{ color: "#f3ecba", fontWeight: "bold", fontFamily: "'Noto Serif Devanagari','Noto Serif',serif", fontSize: "clamp(1.2rem,2.5vw,1.4rem)", margin: "0 0 1.7rem" }}>
@@ -187,15 +194,15 @@ export default function HeroSection() {
                                 You to join us in the wedding celebrations of
                             </p>
 
-                            <p style={{ fontFamily: "Cormorant Upright", fontSize: "clamp(3.5rem,6vw,4rem)", fontWeight: 700, color: "#f3ecba", lineHeight: 1.1, margin: "0" }}>
+                            <p style={{ fontFamily: "Cormorant Upright", fontSize: "clamp(2.5rem, 8vw, 4.2rem)", fontWeight: 700, color: "#f3ecba", lineHeight: 1, margin: "0" }}>
                                 Vishu
                             </p>
 
-                            <p style={{ fontFamily: "Cormorant Upright", fontSize: "clamp(1.5rem,4vw,2.5rem)", color: "#F3ECBA", fontStyle: "italic", lineHeight: 1.1, margin: "1rem 0" }}>
+                            <p style={{ fontFamily: "Cormorant Upright", fontSize: "clamp(1.2rem, 4vw, 2rem)", color: "#F3ECBA", fontStyle: "italic", lineHeight: 1.1, margin: "0.5rem 0" }}>
                                 &amp;
                             </p>
 
-                            <p style={{ fontFamily: "Cormorant Upright", fontSize: "clamp(3.5rem,6vw,4rem)", fontWeight: 700, color: "#F3ECBA", lineHeight: 1.1, margin: "0 0 1.5rem" }}>
+                            <p style={{ fontFamily: "Cormorant Upright", fontSize: "clamp(2.5rem, 8vw, 4.2rem)", fontWeight: 700, color: "#F3ECBA", lineHeight: 1, margin: "0 0 1.5rem" }}>
                                 Kavya
                             </p>
 
