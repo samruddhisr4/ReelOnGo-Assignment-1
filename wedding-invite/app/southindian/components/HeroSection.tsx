@@ -82,7 +82,7 @@
 //         : "12 · 04 · 2025";
 //     return (
 //         <div>
-//             <section className="relative w-full flex flex-col items-center z-20">
+//             <section className="relative w-full flex flex-col items-center z-40">
 //                 <style>{floatKeyframes}</style>
 
 //                 {/* 🕌 Full temple image — shown completely, no cropping 🕌 */}
@@ -462,7 +462,7 @@ export default function HeroSection({
 
     return (
         <div>
-            <section className="relative w-full flex flex-col items-center z-20">
+            <section className="relative w-full flex flex-col items-center z-40">
                 <style>{floatKeyframes}</style>
 
                 {/* ─────────────────────────────────────────────────────────

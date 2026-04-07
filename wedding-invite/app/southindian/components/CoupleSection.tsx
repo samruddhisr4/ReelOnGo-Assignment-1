@@ -48,7 +48,7 @@ export default function CoupleSection({
     }, []);
 
     return (
-        <div className="relative w-full overflow-hidden">
+        <div className="relative w-full z-30">
             {/* Background image layer */}
             <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
                 <img
@@ -167,7 +167,7 @@ export default function CoupleSection({
 
                 {/* Car now uses relative positioning within normal flow. */}
                 <div className="relative w-full flex justify-center"
-                    style={{ marginTop: "clamp(1rem, 4vw, 3rem)", marginBottom: "-2%" }}>
+                    style={{ marginTop: "clamp(1rem, 4vw, 3rem)", marginBottom: "-25%" }}>
                     <img
                         src="/car.avif"
                         alt="Transition Car"
@@ -175,6 +175,7 @@ export default function CoupleSection({
                             width: "clamp(220px, 55%, 700px)",
                             height: "auto",
                             zIndex: 9999,
+                            bottom: "0%",
                             position: "relative",
                         }}
                     />
