@@ -24,6 +24,8 @@ export default function CreateTemplate() {
     const [selectedSong, setSelectedSong] = useState(songs[0]);
     const [weddingDate, setWeddingDate] = useState("");
     const [weddingTime, setWeddingTime] = useState("");
+    const [brideName, setBrideName] = useState("");
+    const [groomName, setGroomName] = useState("");
 
 
     const createFinalLink = () => {
@@ -34,6 +36,8 @@ export default function CreateTemplate() {
         if (selectedSong !== "-NoSelection-") params.set("song", selectedSong);
         if (weddingDate) params.set("date", weddingDate);
         if (weddingTime) params.set("time", weddingTime);
+        if (brideName) params.set("bride", brideName);
+        if (groomName) params.set("groom", groomName);
 
         const baseUrl = window.location.origin + "/southindian";
         const finalUrl = `${baseUrl}?${params.toString()}`;
@@ -108,6 +112,30 @@ export default function CreateTemplate() {
                             />
                         </div>
                     </div>
+
+                    {/* Wedding Names */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-gray-50">
+                        <div className="space-y-3">
+                            <label className="flex items-center gap-2.5 text-[11px] font-black text-gray-400 uppercase tracking-[.15em]">Bride Name</label>
+                            <input
+                                type="text"
+                                placeholder="Meenaya"
+                                value={brideName}
+                                onChange={(e) => setBrideName(e.target.value)}
+                                className="w-full bg-white border-2 border-gray-100 rounded-2xl px-4 py-3 focus:outline-none focus:border-black transition-all font-bold text-[#1a1a1a] shadow-sm text-sm"
+                            />
+                        </div>
+                        <div className="space-y-3">
+                            <label className="flex items-center gap-2.5 text-[11px] font-black text-gray-400 uppercase tracking-[.15em]">Groom Name</label>
+                            <input
+                                type="text"
+                                placeholder="Kavya"
+                                value={groomName}
+                                onChange={(e) => setGroomName(e.target.value)}
+                                className="w-full bg-white border-2 border-gray-100 rounded-2xl px-4 py-3 focus:outline-none focus:border-black transition-all font-bold text-[#1a1a1a] shadow-sm text-sm"
+                            />
+                        </div>
+                    </div>
                 </div>
 
                 {/* Sidebar Footer */}
@@ -128,19 +156,13 @@ export default function CreateTemplate() {
 
                 <div className="relative w-full max-w-[420px] aspect-[9/19] bg-white rounded-[3rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.18)] border-[8px] border-black overflow-hidden group transition-all duration-700">
                     {selectedTemplate === "South Indian" ? (
-                        /* LIVE SIMULATOR - Mobile Frame Viewport */
-                        <div className="absolute inset-0 overflow-y-auto overflow-x-hidden bg-[#0d1a2e] custom-scrollbar">
-                            <div style={{ transform: "scale(0.4) translateZ(0)", transformOrigin: "top left", width: "250%" }}>
-                                <div className="relative w-full">
-                                    <div className="absolute top-4 right-4 z-[10000]">
-                                        <MusicPlayer selectedSong={selectedSong} />
-                                    </div>
-                                    <HeroSection fx={selectedHover} weddingDate={weddingDate} weddingTime={weddingTime} />
-                                    <CoupleSection />
-                                    <CarSection placard={selectedPlacard} />
-                                    <CountdownSection targetDate={weddingDate} />
-                                </div>
-                            </div>
+                        /* TRUE VIEWPORT SIMULATOR - Mobile Frame Iframe */
+                        <div className="absolute inset-0 bg-[#0d1a2e]">
+                            <iframe
+                                src={`/createTemplate/preview?template=${selectedTemplate}&fx=${selectedHover}&song=${selectedSong}&placard=${selectedPlacard}&bride=${brideName}&groom=${groomName}&date=${weddingDate}&time=${weddingTime}`}
+                                className="w-full h-full border-none"
+                                title="Invitation Preview"
+                            />
                         </div>
                     ) : (
                         /* PLACEHOLDER WRAPPER */
